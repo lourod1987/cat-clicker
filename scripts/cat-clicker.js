@@ -3,6 +3,7 @@ var count1 = 0;
 var count2 = 0;
 var count3 = 0;
 var count4 = 0;
+const count = [0, 0, 0, 0, 0];
 //console.log(count);
 
 
@@ -11,24 +12,58 @@ var count4 = 0;
 
 
 $(document).ready(function() {
-	var loaded = false;
+    const $cats = $('div img.cats');
+    const $thumbs = $('.thumbnail');
+    // var loaded = false;
 	
-	if (loaded === false) {
-		$('#kit').hide();
-		$('#hidingCat').hide();
-		$('img#cuddles').hide();
-		$('img#boots').hide();
-		$('img#smiles').hide();
-	}
+    console.log('thumb list: ' + $thumbs.length); 
+    // console.log('cat list: ' + $($cats)); 
+
+    //hide all big cat pictures
+    for (let i = 0; i < $cats.length; i++) {
+        $($cats[i]).addClass('hide');
+    }
+    // if (loaded === false) {
+    //     $('#kit').hide();
+    //     $('#hidingCat').hide();
+    //     $('img#cuddles').hide();
+    //     $('img#boots').hide();
+    //     $('img#smiles').hide();
+    // }
 	
-	loaded = true;
+    // loaded = true;
+	
+    // Let's loop over the numbers in our array
+    for (let i = 0; i < $thumbs.length; i++) {
+
+        // This is the number we're on...
+        var num = $($thumbs[i]);
+
+        // We're creating a DOM element for the number
+        // var elem = document.createElement('div');
+        // elem.textContent = num;
+
+        // ... and when we click, alert the value of `num`
+        num.click(function(numCopy) {
+            return function() {
+                alert(numCopy);
+            };
+        })(num);
+
+        // document.body.appendChild(elem);
+    };
+
+    $("#kit").show();
 });
 
-$('#picBar img').click( (event) => {
-	console.log('click: ' + event.currentTarget);
-//	$(event.currentTarget).show();
-	$('.countContain').append(event.currentTarget).show();
-});
+// $('#picBar').click( (evt) => {
+//     console.log('click: ' + evt.currentTarget);
+//     let selected = evt.currentTarget;
+//     $(selected).show();
+//     $('.countContain').append(selected).show();
+// });
+
+
 
 
 //$('img#cat0').on('click', function() {
@@ -163,13 +198,13 @@ $('#picBar img').click( (event) => {
 // clear the screen for testing
 //document.body.innerHTML = '';
 //
-//var nums = [1,2,3];
+//var $cats = [1,2,3];
 //
 //// Let's loop over the numbers in our array
-//for (var i = 0; i < nums.length; i++) {
+//for (var i = 0; i < $cats.length; i++) {
 //
 //    // This is the number we're on...
-//    var num = nums[i];
+//    var num = $cats[i];
 //
 //    // We're creating a DOM element for the number
 //    var elem = document.createElement('div');

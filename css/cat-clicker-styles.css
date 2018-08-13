@@ -9,6 +9,9 @@ html {
   padding: 0;
 }
 
+.hide {
+	display: none;
+}
 
 
 .catStyles {
