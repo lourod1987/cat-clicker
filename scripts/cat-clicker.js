@@ -20,9 +20,14 @@ $(document).ready(function() {
     // console.log('cat list: ' + $($cats)); 
 
     //hide all big cat pictures
-    for (let i = 0; i < $cats.length; i++) {
-        $($cats[i]).addClass('hide');
+    function hideCats() {
+        for (let i = 0; i < $cats.length; i++) {
+            // $($cats[i]).addClass('hide');
+            $($cats[i]).hide();
+            $($cats[0]).show();
+        }
     }
+    
     // if (loaded === false) {
     //     $('#kit').hide();
     //     $('#hidingCat').hide();
@@ -37,23 +42,21 @@ $(document).ready(function() {
     for (let i = 0; i < $thumbs.length; i++) {
 
         // This is the number we're on...
-        var num = $($thumbs[i]);
+        var thumb = $($thumbs[i]);
 
         // We're creating a DOM element for the number
         // var elem = document.createElement('div');
         // elem.textContent = num;
 
         // ... and when we click, alert the value of `num`
-        num.click(function(numCopy) {
-            return function() {
-                alert(numCopy);
-            };
-        })(num);
-
+        thumb.click(function() {
+            $($cats).hide();
+            $($cats[i]).show();
+        });
         // document.body.appendChild(elem);
-    };
+    }
 
-    $("#kit").show();
+    hideCats();
 });
 
 // $('#picBar').click( (evt) => {
