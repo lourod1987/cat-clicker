@@ -37,7 +37,7 @@ $(document).ready(function() {
             if (tracker[1] > 0) {
                 $('h1').remove();
                 $('h2').prepend('<h1>Shy</h1>');
-                return imageClick(image, num, tracker[0]);
+                return imageClick(image, num, tracker[1]);
             }
             if (tracker[1] === 0) {
                 tracker[1]++;
@@ -51,7 +51,7 @@ $(document).ready(function() {
             if (tracker[2] > 0) {
                 $('h1').remove();
                 $('h2').prepend('<h1>Tabby and Cuddles</h1>');
-                return imageClick(image, num, tracker[0]);
+                return imageClick(image, num, tracker[2]);
             }
             if (tracker[2] === 0) {
                 tracker[2]++;
@@ -65,7 +65,7 @@ $(document).ready(function() {
             if (tracker[3] > 0) {
                 $('h1').remove();
                 $('h2').prepend('<h1>Boots</h1>');
-                return imageClick(image, num, tracker[0]);
+                return imageClick(image, num, tracker[3]);
             }
             if (tracker[3] === 0) {
                 tracker[3]++;
@@ -79,7 +79,7 @@ $(document).ready(function() {
             if (tracker[4] > 0) {
                 $('h1').remove();
                 $('h2').prepend('<h1>Smiles</h1>');
-                return imageClick(image, num, tracker[0]);
+                return imageClick(image, num, tracker[4]);
             }
             if (tracker[4] === 0) {
                 tracker[4]++;
@@ -100,7 +100,7 @@ $(document).ready(function() {
 	
     // loop over the thumbnail images in our array and select the one that is clicked
     for (let i = 0; i < $thumbs.length; i++) {
-        var thumb = $($thumbs[i]);
+        let thumb = $($thumbs[i]);
 
         thumb.click(function() {
             $($cats).hide();
