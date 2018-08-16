@@ -13,6 +13,9 @@ html {
 	display: none;
 }
 
+img {
+	cursor: pointer;
+}
 
 .catStyles {
 	display: flex;
