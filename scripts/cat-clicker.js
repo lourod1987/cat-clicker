@@ -1,6 +1,6 @@
-const count = [0, 0, 0, 0, 0];
-const tracker = [0, 0, 0, 0, 0];
 $(document).ready(function() {
+    const count = [0, 0, 0, 0, 0];
+    const tracker = [0, 0, 0, 0, 0];
     const $cats = $('div img.cats');
     const $thumbs = $('.thumbnail'); 
 
@@ -21,50 +21,70 @@ $(document).ready(function() {
         case 0:
             image = $($cats[0]);
             if (tracker[0] > 0) {
+                $('h1').remove();
+                $('h2').prepend('<h1>Milo</h1>');
                 return imageClick(image, num, tracker[0]);
             }
             if (tracker[0] === 0) {
                 tracker[0]++;
+                $('h1').remove();
+                $('h2').prepend('<h1>Milo</h1>');
                 return imageClick(image, num, 0);
             }
             break;
         case 1:
             image = $($cats[1]);
             if (tracker[1] > 0) {
+                $('h1').remove();
+                $('h2').prepend('<h1>Shy</h1>');
                 return imageClick(image, num, tracker[0]);
             }
             if (tracker[1] === 0) {
                 tracker[1]++;
+                $('h1').remove();
+                $('h2').prepend('<h1>Shy</h1>');
                 return imageClick(image, num, 0);
             }
             break;
         case 2:
             image = $($cats[2]);
             if (tracker[2] > 0) {
+                $('h1').remove();
+                $('h2').prepend('<h1>Tabby and Cuddles</h1>');
                 return imageClick(image, num, tracker[0]);
             }
             if (tracker[2] === 0) {
                 tracker[2]++;
+                $('h1').remove();
+                $('h2').prepend('<h1>Tabby and Cuddles</h1>');
                 return imageClick(image, num, 0);
             }
             break;
         case 3:
             image = $($cats[3]);
             if (tracker[3] > 0) {
+                $('h1').remove();
+                $('h2').prepend('<h1>Boots</h1>');
                 return imageClick(image, num, tracker[0]);
             }
             if (tracker[3] === 0) {
                 tracker[3]++;
+                $('h1').remove();
+                $('h2').prepend('<h1>Boots</h1>');
                 return imageClick(image, num, 0);
             }
             break;
         case 4:
             image = $($cats[4]);
             if (tracker[4] > 0) {
+                $('h1').remove();
+                $('h2').prepend('<h1>Smiles</h1>');
                 return imageClick(image, num, tracker[0]);
             }
             if (tracker[4] === 0) {
                 tracker[4]++;
+                $('h1').remove();
+                $('h2').prepend('<h1>Smiles</h1>');
                 return imageClick(image, num, 0);
             }
         }
