@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    /* 		Model
+	======================= */
     var model = {
         cats: [
             {
@@ -25,9 +27,14 @@ $(document).ready(function() {
         tracker: [0, 0, 0, 0, 0]
     };
 	
-    console.log(model.cats[3].name);
-    console.log(model.count);
+    /* 		Controller
+	======================= */
     var controller = {
+        init: function () {
+            view.hide();
+            view.select();
+            view.thumbs[0].click();
+        },
         increment: function (image, cat, tracked) {
             image.click(() => {
                 model.cats[cat].clickCount += 1 - tracked;
@@ -37,6 +44,8 @@ $(document).ready(function() {
         }
     };
 
+    /* 		View
+	======================= */
     var view = {
         catImg: $('div img.cats'),
         thumbs: $('.thumbnail'),
@@ -133,11 +142,7 @@ $(document).ready(function() {
                 });
             }
         }
-	};
-	
-    console.log(view.catImg.length);
+    };
 
-    view.hide();
-    view.select();
-    view.thumbs[0].click();
+    controller.init();
 });
