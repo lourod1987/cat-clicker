@@ -5,23 +5,28 @@ $(document).ready(function() {
         cats: [
             {
                 name: 'Milo',
-                clickCount: 0
+                clickCount: 0,
+                img: './images/cuteKitten.jpg'
             },
             {
                 name: 'Mittens',
-                clickCount: 0	
+                clickCount: 0,
+                img: './images/hidingCat.jpg'	
             },
             {
                 name: 'Tabby and Cuddles',
-                clickCount: 0
+                clickCount: 0,
+                img: './images/catCuddles.jpg'
             },
             {
                 name: 'Boots',
-                clickCount: 0
+                clickCount: 0,
+                img: './images/boots.jpg'
             },
             {
                 name: 'Smiles',
-                clickCount: 0
+                clickCount: 0,
+                img: './images/smileyCat.jpg'
             }
         ],
         tracker: [0, 0, 0, 0, 0]
@@ -137,7 +142,8 @@ $(document).ready(function() {
 		
                 thumb.click(function() {
                     $(view.catImg).hide();
-                    $(view.catImg[i]).show();               
+                    // $(view.catImg[i]).show();
+                    $('#countContain').prepend(`<img src="${model.cats[i].img}">`);
                     view.reveal(i);
                 });
             }
